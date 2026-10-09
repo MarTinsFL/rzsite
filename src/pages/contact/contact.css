@@ -1,0 +1,87 @@
+/* ==========================================================================
+   /contato — orçamento como experiência
+   ========================================================================== */
+.ct-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5vw; min-height: 100svh; padding: calc(var(--nav-h) + 6vh) var(--gutter) 7vh }
+.ct-left { display: flex; flex-direction: column }
+.ct-title { margin-top: 3vh; font-size: clamp(40px, 5.1vw, 100px) }
+.ct-progress { display: flex; align-items: center; gap: 14px; margin: 6vh 0 4vh }
+.ct-ruler { position: relative; flex: 1; height: 14px; display: flex; justify-content: space-between; align-items: center }
+.ct-ruler::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--line-strong) }
+.ct-ruler > i { position: absolute; left: 0; right: 0; top: calc(50% - 1px); height: 2px; background: var(--beam); transform-origin: left; transition: transform .9s var(--ease) }
+.ct-ruler b { position: relative; width: 1px; height: 14px; background: var(--steel-2); transition: background .4s }
+.ct-ruler b.is-on { background: var(--green) }
+.ct-form { display: flex; flex-direction: column; flex: 1 }
+.ct-step { min-height: 250px; animation: ct-in .6s var(--ease) both }
+.ct-step.is-back { animation-name: ct-in-back }
+@keyframes ct-in { from { opacity: 0; transform: translateY(60px); filter: blur(6px) } to { opacity: 1; transform: none; filter: none } }
+@keyframes ct-in-back { from { opacity: 0; transform: translateY(-60px); filter: blur(6px) } to { opacity: 1; transform: none; filter: none } }
+.ct-count { color: var(--green) }
+.ct-question { display: block; margin-top: 16px; font-weight: 820; font-stretch: 108%; font-size: clamp(32px, 3.5vw, 66px); line-height: 1; letter-spacing: -.03em }
+.ct-hint { margin-top: 12px }
+.ct-input { width: 100%; margin-top: 28px; padding: 12px 0 14px; border: 0; border-bottom: 1px solid var(--line-strong); border-radius: 0; background: none; font-size: clamp(24px, 2.3vw, 40px); font-weight: 480; color: var(--paper); outline: none; transition: border-color .4s }
+.ct-input::placeholder { color: var(--steel-2) }
+.ct-input:focus { border-color: var(--green) }
+.ct-choices { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px }
+.ct-choices button { padding: 16px 20px; border: 1px solid var(--line-strong); font-weight: 750; font-stretch: 110%; font-size: 18px; text-transform: uppercase; transition: background .35s, color .35s, border-color .35s }
+.ct-choices button:hover { border-color: var(--paper) }
+.ct-choices button.is-on { background: var(--green); color: var(--ink); border-color: var(--green) }
+.ct-photo { display: grid; gap: 12px; margin-top: 24px; justify-items: start }
+.ct-drop { display: grid; place-items: center; align-content: center; gap: 8px; width: 100%; height: 210px; overflow: hidden; border: 1px dashed var(--line-strong); cursor: pointer; transition: border-color .3s, background .3s }
+.ct-drop:hover { border-color: var(--green); background: rgba(169, 207, 70, .04) }
+.ct-drop b { font: 300 46px/1 var(--mono); color: var(--green) }
+.ct-drop span { font-weight: 700; text-transform: uppercase; font-stretch: 108% }
+.ct-drop img { width: 100%; height: 100%; object-fit: cover }
+.ct-photo input:focus-visible + .ct-drop, .ct-drop:focus-within { outline: 2px solid var(--green) }
+.ct-error { min-height: 22px; margin-top: 10px; font: 500 12px/1.5 var(--mono); color: #ff8a66 }
+.ct-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line) }
+.ct-nav .link-line:disabled { opacity: .3; pointer-events: none }
+.ct-final { display: grid; gap: 30px; animation: ct-in .8s var(--ease) both }
+.ct-ready { font-size: clamp(40px, 5vw, 96px) }
+.ct-summary { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line) }
+.ct-summary > div { padding: 12px 0; border-bottom: 1px solid var(--line) }
+.ct-summary dd { margin-top: 6px; font-weight: 600 }
+.ct-send { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px }
+.ct-status { padding: 14px 16px; border-left: 2px solid var(--green); background: var(--ink-1); color: var(--fog); line-height: 1.5 }
+.ct-right { position: sticky; top: calc(var(--nav-h) + 4vh); align-self: start; display: grid; gap: 22px }
+.ct-direct { display: flex; flex-wrap: wrap; gap: 26px }
+
+/* ---------- Letreiro de pré-visualização ---------- */
+.sp { display: grid; gap: 12px }
+.sp-head, .sp-dims { display: flex; justify-content: space-between; gap: 12px }
+.sp-fascia { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 8; overflow: hidden; border: 1px dashed var(--line-strong); transition: background 1s var(--ease), border-color .6s; isolation: isolate }
+.sp-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 32px 32px; opacity: .6; transition: opacity .8s }
+.sp-joints { position: absolute; inset: 0; display: flex; justify-content: space-evenly; opacity: 0; transition: opacity .8s }
+.sp-joints i { width: 1px; background: rgba(0, 0, 0, .7); box-shadow: 1px 0 0 rgba(255, 255, 255, .06) }
+.sp-word, .sp-depth, .sp-glow { grid-area: 1 / 1; position: relative; white-space: nowrap; font-weight: 900; font-stretch: 125%; letter-spacing: .02em; line-height: 1; transition: color .6s, -webkit-text-stroke-color .6s, opacity .6s }
+.sp-word { color: transparent; -webkit-text-stroke: 1px rgba(236, 235, 230, .28) }
+.sp.is-empty .sp-word { -webkit-text-stroke-color: rgba(236, 235, 230, .14) }
+.sp-depth { color: transparent; transform: translate(.035em, .045em); opacity: 0 }
+.sp-glow { color: var(--green); filter: blur(.14em); opacity: 0 }
+.sp.stage-2 .sp-word, .sp[class*='stage-'] .sp-word { -webkit-text-stroke-color: rgba(236, 235, 230, .6) }
+.sp.stage-1 .sp-word { -webkit-text-stroke-color: rgba(236, 235, 230, .2) }
+.sp.stage-3 .sp-fascia, .sp.stage-4 .sp-fascia, .sp.stage-5 .sp-fascia, .sp.stage-6 .sp-fascia, .sp.stage-7 .sp-fascia { border: 1px solid #2a2b28; background: linear-gradient(100deg, #121311 0%, #1d1e1b 40%, #2a2b28 48%, #161714 56%, #101110 100%) }
+.sp.stage-3 .sp-grid, .sp.stage-4 .sp-grid, .sp.stage-5 .sp-grid, .sp.stage-6 .sp-grid, .sp.stage-7 .sp-grid { opacity: 0 }
+.sp.stage-3 .sp-joints, .sp.stage-4 .sp-joints, .sp.stage-5 .sp-joints, .sp.stage-6 .sp-joints, .sp.stage-7 .sp-joints { opacity: 1 }
+.sp.stage-4 .sp-depth, .sp.stage-5 .sp-depth, .sp.stage-6 .sp-depth, .sp.stage-7 .sp-depth { opacity: 1; color: #070807 }
+.sp.stage-5 .sp-word, .sp.stage-6 .sp-word, .sp.stage-7 .sp-word { color: #2d2f2a; -webkit-text-stroke-color: rgba(236, 235, 230, .35) }
+.sp.stage-6 .sp-glow { opacity: .18; animation: sp-wait 1.8s steps(6) infinite }
+@keyframes sp-wait { 0%, 100% { opacity: .18 } 40% { opacity: .05 } 60% { opacity: .24 } }
+.sp.is-lit .sp-word { color: #f3f8e4; -webkit-text-stroke-color: transparent; animation: sp-on 1s steps(1) both }
+.sp.is-lit .sp-glow { opacity: .95; animation: sp-halo 1s steps(1) both }
+.sp.is-lit .sp-fascia { box-shadow: 0 0 80px -10px rgba(169, 207, 70, .35) }
+@keyframes sp-on { 0% { color: #2d2f2a } 12% { color: #f3f8e4 } 22% { color: #4a4f3f } 36%, 100% { color: #f3f8e4 } }
+@keyframes sp-halo { 0% { opacity: 0 } 12% { opacity: .9 } 22% { opacity: .1 } 36%, 100% { opacity: .95 } }
+.sp-note { color: var(--steel-2) }
+
+@media (max-width: 959px) {
+  .ct-wrap { grid-template-columns: 1fr; padding-top: calc(var(--nav-h) + 3vh); gap: 28px }
+  .ct-right { position: relative; top: 0; order: -1 }
+  .ct-left { order: 0 }
+  .ct-step { min-height: 0 }
+  .ct-enter { display: none }
+  .ct-summary { grid-template-columns: 1fr }
+  .sp-fascia { aspect-ratio: 16 / 5 }
+  .sp-note, .sp-dims, .ct-direct { display: none }
+  .ct-title { font-size: 8.8vw; margin-top: 1.5vh }
+  .ct-progress { margin: 3vh 0 2vh }
+}

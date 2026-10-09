@@ -1,0 +1,112 @@
+/* ==========================================================================
+   /servicos — da estrutura ao último detalhe
+   ========================================================================== */
+.sv-hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; gap: 6vh; padding: calc(var(--nav-h) + 9vh) var(--gutter) 6vh; border-bottom: 1px solid var(--line) }
+.sv-hero-title { font-size: clamp(48px, 9.2vw, 180px) }
+.sv-hero-foot { display: grid; grid-template-columns: minmax(260px, 36ch) 1fr; gap: 30px 8vw; align-items: end }
+.sv-index { border-top: 1px solid var(--line) }
+.sv-index button { display: flex; align-items: baseline; gap: 18px; width: 100%; padding: 13px 0; border-bottom: 1px solid var(--line); font-weight: 750; font-stretch: 108%; font-size: clamp(18px, 1.6vw, 26px); text-transform: uppercase; text-align: left; color: var(--fog); transition: color .3s, padding .5s var(--ease) }
+.sv-index button:hover, .sv-index button.is-active { color: var(--paper); padding-left: 10px }
+.sv-index button .micro { color: var(--green) }
+
+/* Número lateral fixo */
+.sv-counter { position: fixed; z-index: 20; left: calc(var(--gutter) * .45); top: 50%; translate: 0 -50%; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; opacity: 0; pointer-events: none; transition: opacity .5s var(--ease) }
+.sv-counter.is-visible { opacity: 1 }
+.sv-counter-track { display: grid; height: 1em; overflow: hidden; font-weight: 900; font-stretch: 70%; font-size: clamp(54px, 6vw, 110px); line-height: 1; color: transparent; -webkit-text-stroke: 1.2px var(--green) }
+.sv-counter-track b { grid-area: 1 / 1; transform: translateY(calc((var(--i, 0) - var(--n)) * 100%)); transition: transform .9s var(--ease); font-weight: 900 }
+.sv-counter-track b:nth-child(1) { --i: 0 } .sv-counter-track b:nth-child(2) { --i: 1 } .sv-counter-track b:nth-child(3) { --i: 2 } .sv-counter-track b:nth-child(4) { --i: 3 } .sv-counter-track b:nth-child(5) { --i: 4 }
+
+/* Item de serviço: ocupa praticamente uma viewport, sem cards */
+.sv-item { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); padding: 14vh 0 10vh; border-bottom: 1px solid var(--line) }
+.sv-copy { padding: 0 var(--gutter) 6vh calc(var(--gutter) + 9vw); display: grid; gap: 22px; max-width: 1500px }
+.sv-title { font-size: clamp(46px, 8vw, 156px) }
+.sv-lead { color: var(--paper); max-width: 40ch }
+.sv-detail { display: grid; grid-template-columns: 1.2fr 1fr minmax(160px, 18vw); gap: 30px 4vw; align-items: start; padding: 6vh var(--gutter) 0 calc(var(--gutter) + 9vw) }
+.sv-detail .link-line { grid-column: 1 / -1; justify-self: start }
+.sv-specs > div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line) }
+.sv-specs dd { font-weight: 600; font-stretch: 106% }
+.sv-detail-img { aspect-ratio: 4 / 5 }
+.scene { position: relative; width: 100%; overflow: hidden }
+
+/* 01 · ACM: placas */
+.scene-acm { height: 100svh; min-height: 560px; background: #0a0a09 }
+.acm-cam { --cw: max(100vw, calc(100svh * 16 / 9)); position: absolute; width: var(--cw); aspect-ratio: 16 / 9; left: calc(50% - var(--cw) / 2); top: calc(50% - var(--cw) * 9 / 32); transform-origin: 50% 33.7%; perspective: 1400px; perspective-origin: 50% 35% }
+.acm-base { position: absolute !important; inset: 0 }
+.acm-fascia { position: absolute; transform-style: preserve-3d }
+.acm-wall { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 18px), #121311 }
+.acm-struct { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible }
+.acm-struct rect { fill: rgba(150, 160, 162, .22); stroke: #9aa3a5; stroke-width: 1; vector-effect: non-scaling-stroke }
+.acm-struct circle { fill: var(--green) }
+.acm-tile { position: absolute; transform-style: preserve-3d }
+.acm-face { position: absolute; inset: 0; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5), inset 0 -3px 0 rgba(0, 0, 0, .18) }
+.acm-face img { position: absolute; max-width: none }
+.acm-tile::before, .acm-tile::after { content: ''; position: absolute; background: linear-gradient(90deg, #8d9092, #c9cccd) }
+.acm-tile::before { top: 0; right: 0; width: 22px; height: 100%; transform-origin: right; transform: rotateY(-90deg) }
+.acm-tile::after { left: 0; bottom: 0; width: 100%; height: 22px; transform-origin: bottom; transform: rotateX(90deg); background: linear-gradient(#6f7375, #a8acae) }
+.acm-note { position: absolute; padding: 6px 9px; background: rgba(10, 10, 9, .8); color: var(--green); white-space: nowrap; transform: translateZ(200px) }
+
+/* 02 · Letra caixa: câmera atravessa */
+.scene-letter { height: 100svh; min-height: 560px; background: radial-gradient(ellipse at 50% 60%, #1b1c1a, #070707 70%) }
+.lt-scene { position: absolute; inset: 0; display: grid; place-items: center; perspective: 1100px; perspective-origin: 50% 45% }
+.lt-obj { position: relative; width: min(60vw, 860px); aspect-ratio: 1700 / 1060; transform-style: preserve-3d }
+.lt-obj svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible }
+.lt-back-plate { fill: #1e1f1c; stroke: #2e302b; stroke-width: 6 }
+.lt-led { filter: drop-shadow(0 0 6px rgba(200, 245, 110, .9)) }
+.lt-wall { transform: translateZ(calc(var(--k) * 5.5px)) }
+.lt-wall path { fill: none; stroke: color-mix(in srgb, #4b4e48, #a7aba3 calc(var(--k) * 4%)); stroke-width: 8 }
+.lt-face { transform: translateZ(122px) }
+.lt-face path { fill: color-mix(in srgb, #232521, #f2f8e4 calc(var(--lit) * 100%)); stroke: #c9ccc4; stroke-width: 6 }
+.lt-scene .lt-face { filter: drop-shadow(0 0 calc(var(--lit) * 30px) rgba(169, 207, 70, calc(var(--lit) * .8))) }
+.lt-note { position: absolute; left: var(--gutter); bottom: 9vh; padding: 7px 10px; background: rgba(10, 10, 9, .8); color: var(--green); opacity: 0 }
+.lt-note-in { left: auto; right: var(--gutter) }
+.lt-note-face { left: 50%; translate: -50% 0 }
+
+/* 03 · Letreiro: noite que acende */
+.scene-sign { height: 100svh; min-height: 560px; background: #000 }
+.sg-stage { position: absolute; inset: 0; --g: 100%; --s: 100%; --f: 150% }
+.sg-stage > .media { position: absolute !important; inset: 0 }
+.sg-dark { filter: brightness(.06) saturate(.5) }
+.sg-lit { -webkit-mask-image: radial-gradient(circle at 41% 24%, #000 calc(var(--g) * .4), transparent var(--g)), radial-gradient(ellipse 30% 14% at 41% 24%, #000 calc(var(--s) * .55), transparent var(--s)), radial-gradient(circle at 45% 45%, #000 calc(var(--f) * .45), transparent var(--f)); mask-image: radial-gradient(circle at 41% 24%, #000 calc(var(--g) * .4), transparent var(--g)), radial-gradient(ellipse 30% 14% at 41% 24%, #000 calc(var(--s) * .55), transparent var(--s)), radial-gradient(circle at 45% 45%, #000 calc(var(--f) * .45), transparent var(--f)) }
+.sg-hud { position: absolute; right: var(--gutter); bottom: 6vh; display: grid; justify-items: end; gap: 8px; text-shadow: 0 2px 20px #000 }
+.sg-pct { font-weight: 900; font-stretch: 70%; font-size: clamp(64px, 8vw, 150px); line-height: .8; font-variant-numeric: tabular-nums }
+.sg-pct::after { content: '%'; font-size: .3em; color: var(--green); vertical-align: top; margin-left: .06em }
+
+/* 04 · Comunicação visual: horizontal */
+.scene-visual { overflow: hidden; padding: 2vh 0 }
+.vs-track { display: flex; gap: 3vw; padding: 0 var(--gutter) 0 calc(var(--gutter) + 9vw); width: max-content }
+.vs-frame { margin: 0; width: 46vw }
+.vs-frame .media { aspect-ratio: 4 / 5 }
+.vs-frame-2 { margin-top: 12vh; width: 52vw }
+.vs-frame-2 .media { aspect-ratio: 4 / 3 }
+.vs-frame-3 { width: 40vw }
+.vs-frame-3 .media { aspect-ratio: 16 / 10 }
+.vs-frame figcaption { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; padding-top: 14px }
+.vs-frame figcaption strong { font-weight: 800; font-stretch: 110%; text-transform: uppercase; font-size: 20px }
+.vs-frame figcaption .micro:last-child { grid-column: 2 }
+
+/* 05 · Projetos personalizados: desenho → peça */
+.scene-custom { padding: 0 var(--gutter) 0 calc(var(--gutter) + 9vw) }
+.cu-frame { position: relative; aspect-ratio: 16 / 9; background: #0b0b0a; outline: 1px solid var(--line) }
+.cu-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible }
+.cu-draw { fill: none; stroke: var(--paper); stroke-width: 1.3; vector-effect: non-scaling-stroke }
+.cu-text { fill: var(--green); font: 500 22px var(--mono); letter-spacing: .12em; opacity: 0 }
+.cu-photo { position: absolute !important; inset: 0 }
+
+.sv-cta { padding: 18vh var(--gutter); display: grid; gap: 34px; justify-items: start }
+.sv-cta-title { font-size: clamp(44px, 7.4vw, 144px) }
+
+@media (max-width: 959px) {
+  .sv-hero-foot { grid-template-columns: 1fr }
+  .sv-counter { display: none }
+  .sv-copy, .sv-detail, .scene-custom { padding-left: var(--gutter) }
+  .sv-copy { min-width: 0 }
+  .sv-title { font-size: min(46px, 8.6vw); font-stretch: 80% }
+  .sv-detail { grid-template-columns: 1fr }
+  .sv-detail-img { width: 60% }
+  .vs-track { width: auto; overflow-x: auto; scroll-snap-type: x mandatory; padding-left: var(--gutter); scrollbar-width: none }
+  .vs-frame, .vs-frame-2, .vs-frame-3 { width: 80vw; margin-top: 0; scroll-snap-align: start }
+  .acm-cam { --cw: calc(100svh * 16 / 9) }
+  .lt-obj { width: 86vw }
+}
+
+@media (prefers-reduced-motion: reduce) { .scene-visual { overflow-x: auto } }

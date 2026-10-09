@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b0a" />
+    <title>RZ Design RJ — Construímos o que as pessoas notam</title>
+    <!--rz:meta-->
+    <link rel="icon" href="/images/rz-logo-256.webp" type="image/webp" />
+    <link rel="preload" href="/fonts/archivo-latin-wdth.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/plex-mono-latin-400.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      (function () {
+        var d = document.documentElement
+        d.classList.add('js')
+        try { if (sessionStorage.getItem('rz-intro')) d.setAttribute('data-intro-seen', '') } catch (e) {}
+        // Failsafe: never keep content hidden if the application cannot start.
+        setTimeout(function () { if (!window.__rzReady) d.classList.remove('js') }, 7000)
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

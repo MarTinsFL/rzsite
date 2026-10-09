@@ -1,0 +1,110 @@
+{
+  "hero-facade-night": {
+    "file": "hero-facade-night.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Night architectural photograph, straight-on frontal elevation of a contemporary commercial building in Botafogo, Rio de Janeiro. A wide horizontal fascia band of matte black aluminum composite panels with thin vertical joints spans the full width of the image; the fascia is blank, no text, no letters, no logo. Below it, a tall glass shopfront with slim black steel mullions and warm interior light. Above, board-formed concrete under a deep blue-hour sky. Wet black and white Portuguese stone mosaic sidewalk with soft reflections. Level symmetrical composition, corrected verticals, tilt-shift lens, medium-format camera, restrained natural color grade, deep blacks, subtle film grain. No people, no cars."
+  },
+  "esquina-noturna": {
+    "file": "esquina-noturna.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Night architectural photograph of a contemporary corner commercial building in Copacabana, Rio de Janeiro, seen from a low three-quarter angle. Matte black aluminum composite cladding wraps the corner with a continuous blank fascia band, no text. LED wall-washer lights graze the panels from below creating soft gradients, warm glow from tall glazing, wet street reflections, palm trees silhouetted against a deep blue-hour sky. 24mm lens, corrected verticals, cinematic restrained color grading, deep blacks, subtle film grain. No people, no cars."
+  },
+  "restaurante-mar": {
+    "file": "restaurante-mar.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Dusk architectural photograph of a contemporary seafood restaurant facade on a corner in Leblon, Rio de Janeiro. Facade clad in matte black aluminum composite panels with precise thin joints, a vertical slatted cumaru wood screen, large glazing with a warm candlelit interior. Above the entrance, halo-lit brushed brass channel letters spelling MAR with a soft warm backlight glow on the black panels. Three-quarter view, 35mm lens, corrected verticals, palm tree shadows, wet Portuguese stone sidewalk, restrained natural color grading, deep blacks, subtle film grain. No people."
+  },
+  "letras-nova": {
+    "file": "letras-nova.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Architectural photograph of brushed stainless steel channel letters spelling NOVA mounted with hidden standoffs on a pale board-formed concrete wall of a contemporary clinic in Barra da Tijuca, Rio de Janeiro. Soft raking morning sunlight casting crisp shadows of the letters onto the concrete, a monstera leaf shadow at one edge, oblique view, 50mm lens, shallow depth of field, restrained natural color, subtle film grain. No people."
+  },
+  "bar-noturno": {
+    "file": "bar-noturno.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Night street photograph of a small corner bar in Botafogo, Rio de Janeiro. Above the entrance, illuminated LED channel letters with white acrylic faces spelling BAR, mounted on a matte black aluminum composite fascia, even glow without hotspots, light spilling softly onto the panels. A weathered colonial facade next door, wet asphalt reflecting the sign, a few distant bokeh lights. 35mm lens, cinematic, restrained color, deep blacks, subtle film grain. No people."
+  },
+  "varejo-moda": {
+    "file": "varejo-moda.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Frontal elevation architectural photograph of a renovated two-storey retail store facade in Tijuca, Rio de Janeiro, soft overcast daylight. The facade is clad in white and graphite aluminum composite panels in a precise grid with thin joints, a large shop window with black frames, a recessed entrance, and a slim fascia with the word MODA in black channel letters. Older neighboring buildings at the edges, Portuguese stone sidewalk. Perfectly level, corrected verticals, tilt-shift lens, natural color, soft shadows, subtle film grain. No people, no cars."
+  },
+  "varejo-antes": {
+    "file": "varejo-antes.webp",
+    "kind": "ia",
+    "model": "Higgsfield · Seedream 5.0 Flash (edição da imagem varejo-moda)",
+    "prompt": "Edit this exact photograph. Keep the identical camera position, framing, perspective, building outline, window and door openings, neighboring buildings, sidewalk, street, sky and lighting. Show the same storefront BEFORE its renovation: old stained beige plaster, faded lightbox sign, exposed wires, rusty roll-up shutter, dirty glass, peeling paint."
+  },
+  "academia-pulso": {
+    "file": "academia-pulso.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Night architectural photograph of a contemporary gym facade in Barra da Tijuca, Rio de Janeiro. Matte black aluminum composite cladding with thin recessed linear LED lines tracing horizontal bands of cool white light, large glazing showing the illuminated training floor inside, halo-lit channel letters spelling PULSO on the upper fascia with a soft green backlight on the panels. Low angle, 24mm lens, corrected verticals, wet pavement reflections, restrained color, deep blacks, subtle film grain. No people."
+  },
+  "totem-120": {
+    "file": "totem-120.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Blue hour architectural photograph of a slender freestanding monolith pylon sign clad in matte black aluminum composite panels, about six meters tall, standing in a wet concrete plaza in front of a modern corporate building in Rio de Janeiro. Thin vertical backlit green light line and large brushed aluminum numbers 120 near the top. Landscaped tropical plants, 50mm lens, centered composition, restrained color, deep blacks, subtle film grain. No people."
+  },
+  "acm-junta": {
+    "file": "acm-junta.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Close-up architectural detail of a facade made of matte black aluminum composite panels, showing a precise 10 mm open joint between two panels and the crisp folded panel edges, subtle texture of the coating, raking light from the left. Macro architectural photography, 90mm lens, shallow depth of field, deep blacks, subtle film grain. No text."
+  },
+  "acm-chapas": {
+    "file": "acm-chapas.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Studio photograph of stacked aluminum composite panel sheets in four finishes: matte black, brushed aluminum, glossy white and lime green, edges showing the thin black core, staggered stack on a dark concrete floor, soft overhead softbox light. Product photography, 85mm lens. No text."
+  },
+  "letra-retorno-halo": {
+    "file": "letra-retorno-halo.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Macro detail photograph of the side of a halo-lit channel letter mounted on a black aluminum composite panel at night: brushed stainless steel return, precise edge, hidden standoff spacers, soft green LED halo glowing on the panel behind the letter. 100mm macro lens, shallow depth of field, deep blacks, subtle film grain."
+  },
+  "led-interno": {
+    "file": "led-interno.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Overhead photograph inside an open channel letter during fabrication in a signage workshop: rows of small LED modules fixed to the aluminum back, thin wires, aluminum return walls, a few modules lit with cool white light. 50mm lens, shallow depth of field, realistic, natural color."
+  },
+  "atras-do-letreiro": {
+    "file": "atras-do-letreiro.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Dramatic night photograph from behind a large illuminated rooftop sign: the back of channel letters mounted on a steel subframe, cables, an LED power supply box, and the bright glow of the letters spilling around their edges into the dark sky over Rio de Janeiro. Cinematic, 35mm lens, deep blacks."
+  },
+  "cnc-acm": {
+    "file": "cnc-acm.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Photograph of a CNC router cutting a sheet of black aluminum composite panel in a dimly lit signage workshop, the spindle tracing a precise V-groove for folding, fine aluminum dust floating in a beam of light. 50mm lens, shallow depth of field, cinematic."
+  },
+  "fachada-instalacao": {
+    "file": "fachada-instalacao.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Architectural photograph at dusk of a commercial facade under renovation: left half with matte black aluminum composite panels installed, right half showing the exposed galvanized steel subframe grid with brackets ready for cladding, an aerial work platform in front. Frontal view, corrected verticals."
+  },
+  "comunicacao-lobby": {
+    "file": "comunicacao-lobby.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Interior architectural photograph of a contemporary corporate lobby in Rio de Janeiro with a complete visual communication system: brushed aluminum wayfinding sign plates with simple arrows and pictograms, frosted glass film graphics, a dimensional logo wall with backlit abstract letters. Natural daylight, 24mm lens."
+  },
+  "estrutura-metalon": {
+    "file": "estrutura-metalon.webp",
+    "kind": "ia",
+    "model": "Higgsfield · z_image",
+    "prompt": "Macro product photograph of a brushed aluminum profile with a crisp cut edge, fine linear brushing texture catching one long softbox highlight. Matte black background, low-key studio lighting, 100mm macro lens."
+  }
+}

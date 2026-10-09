@@ -1,0 +1,18 @@
+/* 404 — letreiro com mau contato */
+.nf { position: relative; min-height: 100svh; display: grid; align-content: center; justify-items: center; gap: 5vh; padding: calc(var(--nav-h) + 5vh) var(--gutter) 8vh; overflow: hidden; background: #050505; text-align: center; isolation: isolate }
+.nf-wall { position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 50% 40% at 50% 42%, rgba(169, 207, 70, .14), transparent 70%), radial-gradient(ellipse 80% 70% at 50% 45%, #141513, #050505 75%); animation: nf-ambient 3.2s steps(1) infinite }
+@keyframes nf-ambient { 0%, 100% { opacity: 1 } 46% { opacity: .82 } 48% { opacity: 1 } 49% { opacity: .7 } 52% { opacity: 1 } }
+.nf-kicker { position: absolute; top: calc(var(--nav-h) + 3vh); left: var(--gutter) }
+.nf-sign { display: flex; gap: .04em; font-weight: 900; font-stretch: 112%; font-size: clamp(140px, 30vw, 520px); line-height: .9 }
+.nf-digit { position: relative; display: inline-grid }
+.nf-digit > span { grid-area: 1 / 1 }
+.nf-depth { color: #0c0d0c; transform: translate(calc(var(--d) * .006em), calc(var(--d) * .008em)) }
+.nf-face { position: relative; color: #f1f6e2; text-shadow: 0 0 .01em #fff, 0 0 .06em rgba(212, 245, 122, .5) }
+.nf-halo { color: var(--green); filter: blur(.06em); opacity: .85 }
+.nf-digit.is-faulty .nf-face { animation: nf-face 2.6s steps(1) infinite }
+.nf-digit.is-faulty .nf-halo { animation: nf-halo 2.6s steps(1) infinite }
+@keyframes nf-face { 0%, 100% { color: #f1f6e2 } 44% { color: #2c2e29; text-shadow: none } 46% { color: #f1f6e2 } 47% { color: #3b3e35; text-shadow: none } 50% { color: #f1f6e2 } 72% { color: #9aa07f } 73% { color: #f1f6e2 } }
+@keyframes nf-halo { 0%, 100% { opacity: .85 } 44% { opacity: 0 } 46% { opacity: .85 } 47% { opacity: .05 } 50% { opacity: .85 } 72% { opacity: .3 } 73% { opacity: .85 } }
+.nf-title { font-size: clamp(36px, 5.6vw, 108px) }
+.nf-actions { display: grid; justify-items: center; gap: 16px }
+@media (prefers-reduced-motion: reduce) { .nf-digit.is-faulty .nf-face, .nf-digit.is-faulty .nf-halo, .nf-wall { animation: none } }
